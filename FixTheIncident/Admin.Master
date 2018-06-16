@@ -1,0 +1,68 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Admin.master.cs" Inherits="FixTheIncident.Admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title runat="server" id="helpDeskTitle">Home</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet" />
+</head>
+<body style="font-family: 'Rubik', serif;">
+    <form id="frmHelpD" runat="server">
+        <header class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="container-fluid">
+                <div class="container">
+                    <nav class="navbar navbar-default navbar-static-top">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="MainMenu.aspx" class="navbar-brand" style="font-family: 'Playball', cursive; font-size: xx-large">FixTheIncident </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-1">
+                            <ul class="nav navbar-nav ">
+                                <li class="active"><a href="AddEmployee.aspx">Home</a></li>
+                               
+
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Employee
+                                        <span class="caret"></span>
+                                    </a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="AddEmployee.aspx">Add Employee</a></li>
+                                    </ul>
+                                </li>
+
+
+                                <li style="padding-left: 350px;"><span class="glyphicon-user glyphicon navbar-text" aria-hidden="true"></span>
+                                    <p class="navbar-text">Signed in as</p>
+                                    <span>
+                                        <label id="lblUsername" class="navbar-text" runat="server"></label>
+                                    </span></li>
+                                <li>
+                                    <asp:Button ID="btnLogOff" CssClass="btn navbar-btn navbar-right pull-right" OnClick="btnLogOff_Click" runat="server" Text="Sign Out" />
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <asp:ContentPlaceHolder ID="helpDeskAnalyst" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>

@@ -1,0 +1,70 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="HelpDesk.Master.cs" Inherits="FixTheIncident.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title runat="server" id="helpDeskTitle">Home</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Playball" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet" />
+    <%--<link href="Scripts/Pagination.css" rel="stylesheet" />--%><link href="Content/Pagnation.css" rel="stylesheet" />
+</head>
+<body style="font-family: 'Rubik', serif;">
+    <form id="frmHelpD" runat="server">
+        <header class="navbar navbar-default">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            div class="container-fluid">
+                <nav class="navbar navbar-default navbar-fixed-top">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse" aria-haspopup="true" aria-expanded="false">
+                                <span class="sr-only">Toggle navigation</span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                                <span class="icon-bar"></span>
+                            </button>
+                            <a href="MainMenu.aspx" class="navbar-brand" style="font-family: 'Playball', cursive; font-size: xx-large">FixTheIncident </a>
+                        </div>
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-1">
+                            <ul class="nav navbar-nav ">
+                                <li class="active"><a href="HelpDeskFaults.aspx">Home</a></li>
+                                <li><a href="HelpDeskFaults.aspx">Faults</a></li>
+
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <div>
+                                        <asp:Label Text="Logged in as:" CssClass="navbar-text" runat="server"></asp:Label>
+                                        <label class="navbar-text" id="lblUsername" runat="server"></label>
+                                    </div>
+                                </li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle glyphicon glyphicon-user " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                        <li><a href="#">Change password</a></li>
+                                        <%--<li><a href="#"></a></li>--%>
+                                        <%--<li role="separator" class="divider"></li>--%>
+                                        <%--<li><a href="#">Separated link</a></li>--%>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <asp:Button ID="btnLogOff" CssClass="btn navbar-btn navbar-right pull-right" OnClick="btnLogOff_Click" runat="server" Text="Sign Out" />
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+        </header>
+        <asp:ContentPlaceHolder ID="helpDeskAnalyst" runat="server">
+        </asp:ContentPlaceHolder>
+    </form>
+</body>
+</html>
